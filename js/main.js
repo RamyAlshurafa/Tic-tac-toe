@@ -42,6 +42,14 @@ newarray.forEach(function(element) {
     e.target.textContent='X'
 
 writer(Number(e.target.id),'X',myarray)
+if (available.length==0) {
+  resultContainer.style.display='flex'
+
+  resultContainer.innerHTML='<img src="https://ih0.redbubble.net/image.53610257.5292/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1u2.jpg" alt=""><button type="button" name="button" id="playagain">play again</button>'
+  gameContainer.style.display='none'
+  const playagain=document.getElementById('playagain')
+  playagain.addEventListener('click',deleteing)
+}
 
 find3(myarray)
 let newO=Math.ceil(Math.random()*available.length-1);
@@ -83,6 +91,7 @@ const classes=(str)=>{
         document.getElementById(i*3+j).classList.add('win')
         setTimeout(()=>{
           resultContainer.style.display='flex'
+
           if (str=='XX') {
             resultContainer.innerHTML='<img src="https://ih1.redbubble.net/image.7380308.0915/sticker,375x360-bg,ffffff.png" alt=""><button type="button" name="button" id="playagain">play again</button>'
           }else{
